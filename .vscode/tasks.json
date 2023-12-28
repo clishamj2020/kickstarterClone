@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Frontend",
+            "type": "shell",
+            "command": "npm run start",
+            "options": {
+                "cwd": "${workspaceFolder}/frontend"
+            },
+            "presentation": {
+                "panel": "new"
+            },
+            "group": "build"
+        },
+        {
+            "label": "Backend",
+            "type": "shell",
+            "command": "npm run dev",
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "presentation": {
+                "panel": "new"
+            },
+            "group": "build"
+        },
+        {
+            "label": "Start Frontend and Backend",
+            "dependsOn": ["Frontend", "Backend"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
