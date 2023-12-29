@@ -12,8 +12,8 @@ import UsersComponent from './components/usersComponent';
 function App() {
     return (
         <div>
-            <NavTabs />
             <BrowserRouter>
+                <NavTabs />
                 <Routes>
                     <Route path="/home" Component={HomeComponent} />
                     <Route path="/projects" Component={ProjectsComponent} />

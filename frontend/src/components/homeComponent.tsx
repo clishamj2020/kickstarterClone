@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+// import React, { ChangeEvent, useState } from 'react';
 
 export default function HomeComponent() {
     // const [value, setValue] = useState('one');
@@ -8,5 +8,9 @@ export default function HomeComponent() {
     //     console.log(newValue);
     // };
 
-    return <div></div>;
+    return (
+        <div>
+            <p>home</p>
+        </div>
+    );
 }
