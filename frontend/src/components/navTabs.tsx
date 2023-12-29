@@ -1,28 +1,47 @@
-import React, { ChangeEvent, useState } from 'react';
-import { Tabs, Tab } from '@mui/material';
+import { IconButton, Box, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { ThemeProvider } from '@mui/material/styles';
+import { navTheme } from '../themes/navTheme';
 
 export default function NavTabs() {
-    const [value, setValue] = useState('one');
+    const navigate = useNavigate();
 
-    const handleChange = (event: ChangeEvent<{}>, newValue: string) => {
-        setValue(newValue);
-        console.log(newValue);
+    const handleNavigate = (newValue: string) => {
+        navigate(newValue);
     };
 
     return (
-        <div>
-            <Tabs
-                value={value}
-                onChange={handleChange}
-                textColor="primary"
-                indicatorColor="primary"
-                aria-label="primary tabs example"
-                centered
-            >
-                <Tab value="localhost:3000/projects" label="Projects" />
-                <Tab value="localhost:3000/users" label="Users" />
-                <Tab value="localhost:3000/home" label="Home" />
-            </Tabs>
-        </div>
+        <Box>
+            <ThemeProvider theme={navTheme}>
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Box>
+                        <Button onClick={() => handleNavigate('/home')}>
+                            Home
+                        </Button>
+                        <Button onClick={() => handleNavigate('/projects')}>
+                            Projects
+                        </Button>
+                        <Button onClick={() => handleNavigate('/about')}>
+                            about
+                        </Button>
+                    </Box>
+                    <IconButton
+                        color="primary"
+                        aria-label="settings"
+                        onClick={() => handleNavigate('/settings')}
+                        style={{ marginLeft: 'auto' }}
+                    >
+                        <SettingsIcon />
+                    </IconButton>
+                </div>
+            </ThemeProvider>
+        </Box>
     );
 }
