@@ -11,6 +11,9 @@ import UsersComponent from './components/usersComponent';
 import SettingsComponent from './components/settingsComponent';
 
 function App() {
+    // TODO: Find better way to integrate background color
+    document.body.style.backgroundColor = '#3B3355';
+
     return (
         <div>
             <BrowserRouter>
