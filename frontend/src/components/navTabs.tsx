@@ -28,8 +28,8 @@ export default function NavTabs() {
                         <Button onClick={() => handleNavigate('/projects')}>
                             Projects
                         </Button>
-                        <Button onClick={() => handleNavigate('/users')}>
-                            users
+                        <Button onClick={() => handleNavigate('/about')}>
+                            about
                         </Button>
                     </Box>
                     <IconButton

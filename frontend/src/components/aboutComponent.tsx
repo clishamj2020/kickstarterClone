@@ -1,6 +1,6 @@
 // import React, { ChangeEvent, useState } from 'react';
 
-export default function UsersComponent() {
+export default function AboutComponent() {
     // const [value, setValue] = useState('one');
 
     // const handleChange = (event: ChangeEvent<{}>, newValue: string) => {
@@ -10,7 +10,7 @@ export default function UsersComponent() {
 
     return (
         <div>
-            <p>users</p>
+            <p>about</p>
         </div>
     );
 }

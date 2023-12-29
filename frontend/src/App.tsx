@@ -7,7 +7,7 @@ import NavTabs from './components/navTabs';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeComponent from './components/homeComponent';
 import ProjectsComponent from './components/projectsComponent';
-import UsersComponent from './components/usersComponent';
+import AboutComponent from './components/aboutComponent';
 import SettingsComponent from './components/settingsComponent';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                 <Routes>
                     <Route path="/home" Component={HomeComponent} />
                     <Route path="/projects" Component={ProjectsComponent} />
-                    <Route path="/users" Component={UsersComponent} />
+                    <Route path="/about" Component={AboutComponent} />
                     <Route path="/settings" Component={SettingsComponent} />
                 </Routes>
             </BrowserRouter>
