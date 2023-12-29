@@ -32,6 +32,38 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Frontend Lint",
+            "type": "shell",
+            "command": "npm run lint-fix",
+            "options": {
+                "cwd": "${workspaceFolder}/frontend"
+            },
+            "presentation": {
+                "panel": "new"
+            },
+            "group": "test"
+        },
+        {
+            "label": "Backend Lint",
+            "type": "shell",
+            "command": "npm run lint-fix",
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "presentation": {
+                "panel": "new"
+            },
+            "group": "test"
+        },
+        {
+            "label": "Lint Frontend and Backend",
+            "dependsOn": ["Frontend Lint", "Backend Lint"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         }
     ]
 }

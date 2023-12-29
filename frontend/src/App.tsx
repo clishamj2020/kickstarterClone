@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeComponent from './components/homeComponent';
 import ProjectsComponent from './components/projectsComponent';
 import UsersComponent from './components/usersComponent';
+import SettingsComponent from './components/settingsComponent';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/home" Component={HomeComponent} />
                     <Route path="/projects" Component={ProjectsComponent} />
                     <Route path="/users" Component={UsersComponent} />
+                    <Route path="/settings" Component={SettingsComponent} />
                 </Routes>
             </BrowserRouter>
         </div>

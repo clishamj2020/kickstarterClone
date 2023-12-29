@@ -1,38 +1,55 @@
-import React, { ChangeEvent, useState } from 'react';
-import { Tabs, Tab } from '@mui/material';
+import React, { ChangeEvent } from 'react';
+import { Tabs, Tab, IconButton, Box, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
+import SettingsIcon from '@mui/icons-material/Settings';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { lime, pink, purple } from '@mui/material/colors';
 
 export default function NavTabs() {
-    const [value, setValue] = useState('one');
     const navigate = useNavigate();
 
-    const handleChange = (event: ChangeEvent<{}>, newValue: string) => {
-        setValue(newValue);
-        // Use navigate() to navigate to the new route
+    const handleNavigate = (newValue: string) => {
         navigate(newValue);
     };
 
+    const theme = createTheme({
+        palette: {
+            primary: lime,
+            secondary: pink,
+        },
+    });
+
     return (
-        <div>
-            <Tabs
-                value={value}
-                onChange={handleChange}
-                textColor="primary"
-                indicatorColor="primary"
-                aria-label="primary tabs example"
-                centered
+        <ThemeProvider theme={theme}>
+            <div
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
             >
-                {/* Wrap Tab components with Link and use to prop for routing */}
-                <Link to="/home">
-                    <Tab value="/home" label="Home" />
-                </Link>
-                <Link to="/projects">
-                    <Tab value="/projects" label="Projects" />
-                </Link>
-                <Link to="/users">
-                    <Tab value="/users" label="Users" />
-                </Link>
-            </Tabs>
-        </div>
+                <ThemeProvider theme={theme}>
+                    <Box>
+                        <Button onClick={() => handleNavigate('/home')}>
+                            Home
+                        </Button>
+                        <Button onClick={() => handleNavigate('/projects')}>
+                            Projects
+                        </Button>
+                        <Button onClick={() => handleNavigate('/users')}>
+                            users
+                        </Button>
+                    </Box>
+                </ThemeProvider>
+                <IconButton
+                    color="primary"
+                    aria-label="settings"
+                    onClick={() => handleNavigate('/settings')}
+                    style={{ marginLeft: 'auto' }}
+                >
+                    <SettingsIcon />
+                </IconButton>
+            </div>
+        </ThemeProvider>
     );
 }
