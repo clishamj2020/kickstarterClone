@@ -1,2 +1,2 @@
 # kickstarterClone
-A simple Kickstarter clone application that can be used as a base to creating MERN (MongoDB, Express.js, React.js, Node.js) applications.
+A Kickstarter clone application built on a MERN (MongoDB, Express.js, React.js, Node.js) stack. The frontend and backend are two seperate applications running on their own respective ports.
