@@ -16,4 +16,5 @@ export enum Category {
     Media = 'Media',
     Gaming = 'Gaming',
     Food = 'Food',
+    Other = 'Other',
 }
