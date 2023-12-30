@@ -3,6 +3,7 @@ export interface ProjectType {
     title: string;
     description: string;
     category: Category;
+    imagePath: string;
 }
 
 export enum Category {
