@@ -1,16 +1,19 @@
 // import React, { ChangeEvent, useState } from 'react';
 
+import { Grid } from '@mui/material';
+import GridBlock from './gridBlockComponent';
+
 export default function ProjectsComponent() {
-    // const [value, setValue] = useState('one');
-
-    // const handleChange = (event: ChangeEvent<{}>, newValue: string) => {
-    //     setValue(newValue);
-    //     console.log(newValue);
-    // };
-
     return (
-        <div>
-            <p>projects</p>
-        </div>
+        <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <GridBlock>Hi</GridBlock>
+            <GridBlock>There</GridBlock>
+            <GridBlock>A</GridBlock>
+            <GridBlock>Test</GridBlock>
+            <GridBlock>Hi</GridBlock>
+            <GridBlock>There</GridBlock>
+            <GridBlock>A</GridBlock>
+            <GridBlock>Test</GridBlock>
+        </Grid>
     );
 }

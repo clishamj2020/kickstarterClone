@@ -1,4 +1,4 @@
-import { IconButton, Box, Button } from '@mui/material';
+import { IconButton, Box, Button, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { ThemeProvider } from '@mui/material/styles';
@@ -12,7 +12,7 @@ export default function NavTabs() {
     };
 
     return (
-        <Box>
+        <Grid rowSpacing={0} style={{ paddingBottom: '12px' }}>
             <ThemeProvider theme={navTheme}>
                 <div
                     style={{
@@ -42,6 +42,6 @@ export default function NavTabs() {
                     </IconButton>
                 </div>
             </ThemeProvider>
-        </Box>
+        </Grid>
     );
 }

@@ -18,6 +18,7 @@ function App() {
         <div>
             <BrowserRouter>
                 <NavTabs />
+
                 <Routes>
                     <Route path="/home" Component={HomeComponent} />
                     <Route path="/projects" Component={ProjectsComponent} />
