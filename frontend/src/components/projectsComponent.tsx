@@ -1,7 +1,6 @@
 // import React, { ChangeEvent, useState } from 'react';
 
 import { Grid } from '@mui/material';
-import GridItem from './gridItemComponent';
 import GridBlock from './gridBlockComponent';
 
 export default function ProjectsComponent() {
