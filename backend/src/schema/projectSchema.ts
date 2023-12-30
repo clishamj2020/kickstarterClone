@@ -25,6 +25,10 @@ const projectSchema = new Schema<IProjectSchema>(
             enum: Object.values(Category),
             required: true,
         },
+        imagePath: {
+            type: String,
+            required: true,
+        },
     },
     {
         timestamps: true,

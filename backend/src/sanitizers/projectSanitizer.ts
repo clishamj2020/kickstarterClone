@@ -11,6 +11,7 @@ export function sanitizeProject(
         title: sanitizeTitle(project.title),
         description: sanitizeDescription(project.description),
         category: sanitizeCategory(project.category),
+        imagePath: sanitizeImagePath(project.imagePath),
     };
     // add other properties here if needed
     return sanitizedProject;
@@ -68,4 +69,14 @@ function sanitizeCategory(cat: Category): Category {
         throw new HttpException('Category is not a valid category', 400);
     }
     return cat;
+}
+
+function sanitizeImagePath(path: string): string {
+    if (path === undefined) {
+        throw new HttpException('Path is undefined', 400);
+    }
+    if (typeof path !== 'string') {
+        throw new HttpException('Path is not a string', 400);
+    }
+    return path;
 }
